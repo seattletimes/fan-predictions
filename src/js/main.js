@@ -4,4 +4,9 @@ var ich = require("icanhaz");
 var scatterTemplate = require("./_scatterTemplate.html");
 ich.addTemplate("scatterTemplate", scatterTemplate);
 
-document.getElementById("scatterplot").innerHTML = ich.scatterTemplate();
+predictionData.forEach(function(prediction) {
+  prediction.seahawksPerc = prediction.seahawks / 75 * 100;
+  prediction.patriotsPerc = prediction.patriots / 75 * 100;
+});
+
+document.getElementById("scatterplot").innerHTML = ich.scatterTemplate({data: predictionData});
