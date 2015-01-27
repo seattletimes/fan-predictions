@@ -22,13 +22,19 @@ form.on("click", ".submit", function() {
 
   //handle form elements correctly
   var packet = formUtil.package(form);
-  var valid = formUtil.validate(packet, {
-    seahawks: true,
-    patriots: true
-  });
+  var message = "";
+  if (!packet) {
+    message = "We need your prediction in order to add you!";
+  }  else if (Math.max(packet.patriots, packet.seahawks) > 70) {
+    message = "Scores over 70 points are not accepted.";
+  } else if (packet.seahawks == packet.patriots) {
+    message = "Scores cannot be equal.";
+  }
 
-  if (valid !== true) {
+  if (message) {
     panel.addClass("invalid");
+    console.log(message)
+    $(".validation.error").html(message);
     return;
   }
   

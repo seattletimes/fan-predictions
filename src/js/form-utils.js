@@ -3,6 +3,7 @@ var $ = require("jquery");
 module.exports = {
   package: function(form) {
     var packet = {};
+    var valid = true;
     form.find("input[type!=checkbox][type!=radio],select,textarea,input:checked").each(function() {
       var $this = $(this);
       if (this.hasAttribute("required") && !$this.val()) {
@@ -13,8 +14,13 @@ module.exports = {
       if (value == "on" && this.getAttribute("type") == "checkbox") {
         value = true;
       }
+      var cast = this.getAttribute("data-cast");
+      if (cast && cast == "number") {
+        value = value * 1;
+      }
       packet[key] = value;
     });
+    if (!valid) return null;
     return packet;
   },
   //returns true if pass, key name if fail
