@@ -14,8 +14,6 @@
     var finalScore = p.seahawks + "-" + p.patriots;
     if (!groupedPredictions[finalScore]) { 
       groupedPredictions[finalScore] = {
-        seahawks: p.seahawks,
-        patriots: p.patriots,
         seahawks: p.seahawks * 1,
         patriots: p.patriots * 1,
         count: 0
@@ -33,8 +31,6 @@
   
   for (var index in groupedPredictions) {
     var p = groupedPredictions[index];
-    p.x = p.seahawks / maxHawkScore * 100,
-    p.y = p.patriots / maxPatScore * 100,
     p.x = p.seahawks / maxScore * 100,
     p.y = p.patriots / maxScore * 100,
     p.opacity = p.count / maxCount;
@@ -65,7 +61,6 @@
       <% for (var index in groupedPredictions) { 
         var p = groupedPredictions[index]; %>
         <div class="point-container">
-          <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>"></div>
           <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>; background: <%= p.color %>;"></div>
           <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
             <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
