@@ -21,79 +21,85 @@ body {
   font-family: @sans-serif;
 }
 
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 .scatterplot {
   height: 600px;
   width: 600px;
   float: left;
   margin-left: 50px;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left: 1px solid #888;
+  border-bottom: 1px solid #888;
   position: relative;
   margin-top: 50px;
+
+  .point-container {
+    cursor: pointer;
+
+    &.seahawks {
+      .point {
+        background: @seahawks;
+        border: 3px solid @main;
+      }
+
+      .tooltip {
+        border-top: 4px solid @seahawks;
+      }
+    }
+
+    &.patriots {
+      .point {
+        background: @patriots;
+        border: 3px solid @main;
+      }
+
+      .tooltip {
+        border-top: 4px solid @patriots;
+      }
+    }
+
+    .point {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+    }
+
+    .tooltip {
+      display: none;
+      position: absolute;
+      background: #EEE;
+      transition: opacity .2s linear;
+      border: 1px solid #CCC;
+      border-radius: 4px;
+      padding: 10px;
+
+      .score {
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      .tooltip {
+        display: block;
+      }
+    }
+  }
 }
 
-.point-container {
-  cursor: pointer;
-
-  &.seahawks {
-    .point {
-      background: @main;
-      border: 2px solid @seahawks;
-    }
-
-    .tooltip {
-      border-top: 4px solid @seahawks;
-    }
+.sidebar {
+  .add-yourself {
+    cursor: pointer;
+    display: inline-block;
+    margin: 50px;
   }
 
-  &.patriots {
-    .point {
-      background: @main;
-      border: 2px solid @patriots;
-    }
-
-    .tooltip {
-      border-top: 4px solid @patriots;
-    }
-  }
-
-  .point {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
-  }
-
-  .tooltip {
+  .thanks {
     display: none;
-    position: absolute;
-    background: #EEE;
-    transition: opacity .2s linear;
-    border: 1px solid #CCC;
-    border-radius: 4px;
-    padding: 10px;
-
-    .score {
-      font-weight: bold;
-    }
-  }
-
-  &:hover {
-    .tooltip {
-      display: block;
-    }
+    margin: 50px;
+    color: gray;
   }
 }
-
-.add-yourself {
-  cursor: pointer;
-  display: inline-block;
-  margin: 50px;
-}
-
-.thanks {
-  display: inline-block;
-  margin: 50px;
-  color: gray;
-}
-

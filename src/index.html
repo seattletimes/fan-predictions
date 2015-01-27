@@ -6,6 +6,8 @@
   var hawkScores = [];
   var patScores = [];
   var counts = [];
+  var seahawkCount = 0;
+  var patriotCount = 0;
 
   predictionData.forEach(function(p) { 
     hawkScores.push(p.seahawks * 1); 
@@ -34,8 +36,19 @@
     p.x = p.seahawks / maxScore * 100,
     p.y = p.patriots / maxScore * 100,
     p.opacity = p.count / maxCount;
-    p.team = p.seahawks > p.patriots ? "seahawks" : "patriots"
+
+    if (p.seahawks > p.patriots) {
+      p.team = "seahawks";
+      seahawkCount += p.count;
+    } else {
+      p.team = "patriots";
+      patriotCount += p.count;
+    }
   }
+
+  var totalCount = seahawkCount + patriotCount;
+  var seahawkPercent = Math.round(seahawkCount / totalCount * 100);
+  var patriotPercent = Math.round(patriotCount / totalCount * 100);
 %>
 
 <!doctype html>
@@ -60,21 +73,33 @@
 
     <%= t.include("_form.html") %>
 
-    <div class="scatterplot">
-      <% for (var index in groupedPredictions) { 
-        var p = groupedPredictions[index]; %>
-        <div class="point-container <%= p.team %>">
-          <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>;"></div>
-          <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
-            <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
-            Count: <%= p.count %>
-          </div>
-        </div>
-      <% } %>
-    </div>
+    <h1>Who's Going to Win the Super Bowl?</h1>
 
-    <div class="add-yourself">Add yourself</div>
-    <div class="thanks">Thanks for your submission.</div>
+    <div class="container">
+      <div class="scatterplot">
+        <% for (var index in groupedPredictions) { 
+          var p = groupedPredictions[index]; %>
+          <div class="point-container <%= p.team %>">
+            <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>;"></div>
+            <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
+              <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
+              Count: <%= p.count %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="sidebar">
+        <div>
+          Seahawks: <%= seahawkPercent %>%
+          <br>
+          Patriots: <%= patriotPercent %>%
+        </div>
+        
+        <div class="add-yourself">Add yourself</div>
+        <div class="thanks">Thanks for your submission.</div>
+      </div>
+    </div>
 
     <script src="app.js"></script>
     <% /*= t.include("partials/_adFoot.html"); */ %>
