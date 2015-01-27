@@ -3,6 +3,10 @@
 require("./form");
 var $ = require("jquery");
 
-$(".close").on("click", function() {
+$(".skip, .view-results").on("click", function() {
   $(".overlay").removeClass("visible");
+});
+
+$(".add-yourself").on("click", function() {
+  $(".overlay").addClass("visible");
 });

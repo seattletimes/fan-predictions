@@ -13,7 +13,9 @@ form.find(".submit").attr("disabled", null);
 
 //do not show form if it has been submitted before
 if (cookie.read("sfm-sent")) {
-  // panel.addClass("sent");
+  panel.addClass("sent");
+  $(".add-yourself").hide();
+  $(".thanks").show();
 }
 
 form.on("click", ".submit", function() {
@@ -22,19 +24,18 @@ form.on("click", ".submit", function() {
 
   //handle form elements correctly
   var packet = formUtil.package(form);
-  var message = "";
+  var errorMsg = "";
   if (!packet) {
-    message = "We need your prediction in order to add you!";
+    errorMsg = "We need your prediction in order to add you!";
   }  else if (Math.max(packet.patriots, packet.seahawks) > 70) {
-    message = "Scores over 70 points are not accepted.";
+    errorMsg = "Scores over 70 points are not accepted.";
   } else if (packet.seahawks == packet.patriots) {
-    message = "Scores cannot be equal.";
+    errorMsg = "Scores cannot be equal.";
   }
 
-  if (message) {
+  if (errorMsg) {
     panel.addClass("invalid");
-    console.log(message)
-    $(".validation.error").html(message);
+    $(".validation.error").html(errorMsg);
     return;
   }
   
@@ -62,13 +63,13 @@ form.on("click", ".submit", function() {
 
 });
 
-$(document.body).on("click", ".show-form", function() {
-  panel.toggleClass("show");
-});
+// $(document.body).on("click", ".show-form", function() {
+//   panel.toggleClass("show");
+// });
 
-form.on("focus", "input,textarea", function() {
-  panel.removeClass("invalid");
-});
+// form.on("focus", "input,textarea", function() {
+//   panel.removeClass("invalid");
+// });
 
 window.clearSent = function() {
   cookie.clear("sfm-sent");
