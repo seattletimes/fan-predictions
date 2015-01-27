@@ -1,3 +1,40 @@
+<%
+  var predictionData = json.FanPredictions_Predictions;
+
+  var groupedPredictions = {};
+
+  var hawkScores = [];
+  var patScores = [];
+  var counts = [];
+
+  predictionData.forEach(function(p) { 
+    hawkScores.push(p.seahawks * 1); 
+    patScores.push(p.patriots * 1) 
+
+    var finalScore = p.seahawks + "-" + p.patriots;
+    if (!groupedPredictions[finalScore]) { 
+      groupedPredictions[finalScore] = {
+        seahawks: p.seahawks,
+        patriots: p.patriots,
+        count: 0
+      }
+    }
+    groupedPredictions[finalScore].count += 1;
+    counts.push(groupedPredictions[finalScore].count);
+  });
+
+  var maxHawkScore = Math.max.apply(null, hawkScores);
+  var maxPatScore = Math.max.apply(null, patScores);
+  var maxCount = Math.max.apply(null, counts);
+  
+  for (var index in groupedPredictions) {
+    var p = groupedPredictions[index];
+    p.x = p.seahawks / maxHawkScore * 100,
+    p.y = p.patriots / maxPatScore * 100,
+    p.opacity = p.count / maxCount;
+  }
+%>
+
 <!doctype html>
 <html>
   <head>
@@ -14,9 +51,18 @@
     </div>
 
     <div id="scatterplot">
+      <% for (var index in groupedPredictions) { 
+        var p = groupedPredictions[index]; %>
+        <div class="point" 
+          style="left: <%= p.x %>%; 
+                 bottom: <%= p.y %>%;
+                 opacity: <%= p.opacity %>"
+          data-score=""
+          data-count="">
+        </div>
+      <% } %>
     </div>
 
-    <script>var predictionData = <%= JSON.stringify(json.FanPredictions_Predictions) %></script>
     <script src="app.js"></script>
     <% /*= t.include("partials/_adFoot.html"); */ %>
     <%= t.include("partials/_workHere.html") %>
