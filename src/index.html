@@ -16,6 +16,8 @@
       groupedPredictions[finalScore] = {
         seahawks: p.seahawks,
         patriots: p.patriots,
+        seahawks: p.seahawks * 1,
+        patriots: p.patriots * 1,
         count: 0
       }
     }
@@ -26,12 +28,21 @@
   var maxHawkScore = Math.max.apply(null, hawkScores);
   var maxPatScore = Math.max.apply(null, patScores);
   var maxCount = Math.max.apply(null, counts);
+
+  var maxScore = maxHawkScore > maxPatScore ? maxHawkScore : maxPatScore;
   
   for (var index in groupedPredictions) {
     var p = groupedPredictions[index];
     p.x = p.seahawks / maxHawkScore * 100,
     p.y = p.patriots / maxPatScore * 100,
+    p.x = p.seahawks / maxScore * 100,
+    p.y = p.patriots / maxScore * 100,
     p.opacity = p.count / maxCount;
+    if (p.seahawks > p.patriots) {
+      p.color = "#67b74c";
+    } else {
+      p.color = "#9f2015";
+    }
   }
 %>
 
@@ -55,6 +66,7 @@
         var p = groupedPredictions[index]; %>
         <div class="point-container">
           <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>"></div>
+          <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>; background: <%= p.color %>;"></div>
           <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
             <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
             Count: <%= p.count %>
