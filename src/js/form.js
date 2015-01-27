@@ -23,8 +23,8 @@ form.on("click", ".submit", function() {
   //handle form elements correctly
   var packet = formUtil.package(form);
   var valid = formUtil.validate(packet, {
-    hawks: true,
-    pats: true
+    seahawks: true,
+    patriots: true
   });
 
   if (valid !== true) {
