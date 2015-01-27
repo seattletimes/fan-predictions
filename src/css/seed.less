@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Helvetica;
+}
+
 .form {
   background: #EEE;
   height: 300px;
@@ -13,7 +17,7 @@
   display: inline-block;
 }
 
-#scatterplot {
+.scatterplot {
   height: 800px;
   width: 800px;
   float: left;
@@ -23,10 +27,36 @@
   position: relative;
 }
 
-.point {
-  position: absolute;
-  background: blue;
-  width: 14px;
-  height: 14px;
-  border-radius: 7px;
+.point-container {
+  cursor: pointer;
+
+  .point {
+    position: absolute;
+    background: #164c75;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    background: #EEE;
+    transition: opacity .2s linear;
+    border: 1px solid #CCC;
+    border-top: 4px solid #9f2015;
+    border-radius: 4px;
+    padding: 10px;
+
+    .score {
+      font-weight: bold;
+    }
+  }
+
+  &:hover {
+    .tooltip {
+      display: block;
+    }
+  }
 }
+

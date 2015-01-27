@@ -50,15 +50,15 @@
       I am a form.
     </div>
 
-    <div id="scatterplot">
+    <div class="scatterplot">
       <% for (var index in groupedPredictions) { 
         var p = groupedPredictions[index]; %>
-        <div class="point" 
-          style="left: <%= p.x %>%; 
-                 bottom: <%= p.y %>%;
-                 opacity: <%= p.opacity %>"
-          data-score=""
-          data-count="">
+        <div class="point-container">
+          <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>"></div>
+          <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
+            <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
+            Count: <%= p.count %>
+          </div>
         </div>
       <% } %>
     </div>
