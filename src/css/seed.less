@@ -5,16 +5,20 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Helvetica;
-}
+@import "form";
+@import "page";
 
-.form {
-  background: #EEE;
-  height: 300px;
-  width: 250px;
-  float: left;
-  display: inline-block;
+@block: 'Oswald', sans-serif;
+@sans-serif: Helvetica, Arial, sans-serif;
+
+@main: #00163f;
+@patriots: #c1051d;
+@seahawks: #57c40f;
+
+@mobile: ~"(max-width: 480px)";
+
+body {
+  font-family: @sans-serif;
 }
 
 .scatterplot {
@@ -31,6 +35,28 @@ body {
 .point-container {
   cursor: pointer;
 
+  &.seahawks {
+    .point {
+      background: @main;
+      border: 2px solid @seahawks;
+    }
+
+    .tooltip {
+      border-top: 4px solid @seahawks;
+    }
+  }
+
+  &.patriots {
+    .point {
+      background: @main;
+      border: 2px solid @patriots;
+    }
+
+    .tooltip {
+      border-top: 4px solid @patriots;
+    }
+  }
+
   .point {
     position: absolute;
     width: 14px;
@@ -44,7 +70,6 @@ body {
     background: #EEE;
     transition: opacity .2s linear;
     border: 1px solid #CCC;
-    border-top: 4px solid #164c75;
     border-radius: 4px;
     padding: 10px;
 

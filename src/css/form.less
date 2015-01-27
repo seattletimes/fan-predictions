@@ -1,0 +1,174 @@
+// @import "location-input";
+// @import "autocomplete";
+// @import "util";
+// @import "radio";
+
+.overlay {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: background .2s linear;
+
+  .modal {
+    position: relative;
+    display: block;
+    top: 100px;
+    margin: auto;
+    width: 768px;
+    max-width: 100%;
+    padding: 2em 3em 3em;
+    border-radius: 4px;
+    background: @main;
+    color: rgba(255,255,255,0.8);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .3);
+
+    @media @mobile {
+      top: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 0px;
+      right: 4px;
+      cursor: pointer;
+      font-size: 24px;
+      color: gray;
+
+      &:hover {
+        color: lighten(gray, 10%);
+      }
+    }
+  }
+
+  &.visible {
+    background: rgba(0, 0, 0, .8);
+    display: block;
+  }
+}
+
+.form-panel {
+
+  h2 {
+    font-family: @block;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+    font-size: 26px;
+  }
+
+  .chatter {
+    margin-top: 0;
+  }
+
+  input {
+    // display: block;
+    width: 50px;
+    margin: 5px 0 15px 0;
+  }
+
+  input, textarea {
+    border: 1px solid #CCC;
+    font-size: 1em;
+    padding: 6px;
+  }
+
+  button {
+    border: none;
+    background: @seahawks;
+    color: white;
+    transition: box-shadow .2s ease-in-out, background .2s linear;
+    font-weight: bold;
+
+    &:hover {
+      background: darken(#888, 8%);
+    }
+  }
+
+  .submit {
+    font-size: 0.9em;
+    padding: 8px;
+    margin-left: 15px;
+  }
+
+  .submission {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+  }
+
+  .error {
+    border-radius: 4px;
+    background: #822;
+    color: white;
+    text-align: center;
+    margin: 8px 0;
+    padding: 8px;
+    display: none;
+  }
+
+  &.invalid {
+    .validation.error {
+      display: block;
+    }
+  }
+
+  .ui {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .when-sent {
+      display: none;
+      padding: 15px;
+
+      button {
+        margin-top: 1em;
+        font-size: 0.9em;
+        font-family: @block;
+        text-transform: uppercase;
+        font-weight: normal;
+        padding: 8px;
+      }
+    }
+
+    .message {
+      display: block;
+      padding: 14px;
+      text-align: center;
+      font-size: 14px;
+      font-family: @sans-serif;
+      color: white;
+      background: darken(gray, 40%);
+      width: 100%;
+      margin-bottom: 10px;
+      transition: background .5s linear, color .5s linear;
+    }
+  }
+
+  &.sending, &.sent {
+    .ui {
+      display: block;
+    }
+  }
+
+  &.sent {
+    .ui {
+      background: white;
+    }
+
+    .when-sent {
+      display: block;
+    }
+
+    .message {
+      background: darken(gray, 15%);
+    }
+  }
+}
