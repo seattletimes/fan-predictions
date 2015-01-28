@@ -2,11 +2,18 @@
   <% json.Predictions_Sheet1.forEach(function(prediction) { %>
     <div class="prediction">  
       <div class="card-top">
+          <% if(prediction.mug) { %>
           <img class="mug" src="assets/<%= prediction.mug %>.jpg">
           <div class="info">
             <p class="name"><%= prediction.name %></p>
             <p class="title">&mdash; <%= prediction.title %></p>
           </div>
+          <% } else { %>
+           <div class="info-no-mug">
+            <p class="name"><%= prediction.name %></p>
+            <p class="title">&mdash; <%= prediction.title %></p>
+          </div>
+          <% } %>
           <div class="clearing"></div>
       </div>
       <div class="lower">

@@ -18,21 +18,28 @@
     text-align: center;
     vertical-align: text-top;
     margin-right: 20px;
-      @media @landscape {
-        width: 31%;
-      }
-
-      @media @tablet {
-        width: 47%;
-      }
-
-      @media @mobile {
-        width: 100%;
-      }
+    
+    @media @landscape {
+      width: 31%;
+    }
+    @media @tablet {
+      width: 47%;
+    }
+    @media @mobile {
+      width: 100%;
+    }
   }
 
   .card-top {
     background-color: @seaBlue;
+
+    .info-no-mug {
+        height: 80px;
+      .name {
+        margin-top: 0;
+        padding-top: 10px;
+      }
+    }
   }
 
   .lower {
@@ -77,6 +84,11 @@
     text-align: left;
   }
 
+  .info {
+    float: left;
+    width: 63%;
+  }
+
   .mug {
     width: 60px;
     height: 60px;
@@ -86,14 +98,4 @@
     float: left; 
     margin: 10px 20px 0 20px;
   }
-
-  .info {
-    float: left;
-    width: 63%;
-  }
-
-  .lower {
-    margin-top: -10px;
-  }
-
 }
