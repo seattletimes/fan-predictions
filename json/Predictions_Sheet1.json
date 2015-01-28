@@ -79,5 +79,23 @@
     "comment": "I think all in all, the Seahawks are a younger and hungrier team, and I think they'll end up winning the game. I don't think it will be as easy as last year, but I think they'll get it done. ",
     "mug": "largent",
     "color": "green"
+  },
+  {
+    "title": "First Seahawks QB",
+    "name": "Jim Zorn",
+    "score": "20-17",
+    "winner": "Seahawks",
+    "comment": "I think it's going to be a really close game. I think I predicted a close game last year and it was pretty one-sided, but I can't imagine this game going that way.",
+    "mug": "zorn",
+    "color": "green"
+  },
+  {
+    "title": "Guitarist for Pearl Jam",
+    "name": "Mike McCready",
+    "score": "",
+    "winner": "",
+    "comment": "",
+    "mug": "mccready",
+    "color": ""
   }
 ]
