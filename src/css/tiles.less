@@ -5,18 +5,18 @@
   box-sizing: border-box;
 }
 
-.body-text {
-  padding: 0 1em 1em;
+.tiles{
   margin: 0 auto;
   float: left;
+  width: 100%;
 
   .prediction {
-    padding: 15px;
     display: inline-block;
     width: 23%;
-    margin-right: 1%;
     margin-bottom: 2%;
     text-align: center;
+    vertical-align: text-top;
+    margin-right: 10px;
   }
 
   .card-top {
@@ -27,38 +27,42 @@
     border-right: 5px solid @seaBlue;
     border-left: 5px solid @seaBlue;
     border-bottom: 5px solid @seaBlue;
+    min-height: 265px;
+    padding: 10px;
   }
 
   .name {
-    font-family: @paytone;
+    font-family: @block;
     color: white;
     font-size: 1.5em;
-    margin: 10px 0 5px 0;
+    margin: 10px 0 2px 0;
   }
 
   .title {
-    font-size: 18px;
+    font-size: 14px;
     color: darkgrey;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-top: 0;
   }
 
   .score {
-    font-size: 3em;
+    font-size: 2em;
     font-family: @paytone;
     color: @seaGray;
-    margin: 10px 0 0 0;
+    margin: 0;
   }
 
   .winner {
-    font-size: 24px; 
+    font-size: 1.3em; 
     font-family: @paytone;
     margin-top: -8px;
+    margin-bottom: 0;
   }
 
   .comment {
-    font-size: 18px; 
+    font-size: 14px; 
     color: black;
+    text-align: left;
   }
 
   footer {
