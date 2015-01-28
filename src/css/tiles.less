@@ -9,6 +9,7 @@
   margin: 0 auto;
   float: left;
   width: 100%;
+  padding: 0 10px 0 10px;
 
   .prediction {
     display: inline-block;
@@ -17,6 +18,17 @@
     text-align: center;
     vertical-align: text-top;
     margin-right: 20px;
+      @media @mobile {
+        width: 100%;
+      }
+
+      @media @tablet {
+        width: 47%;
+      }
+
+      @media @landscape {
+        width: 31%;
+      }
   }
 
   .card-top {
@@ -27,7 +39,7 @@
     border-right: 5px solid @seaBlue;
     border-left: 5px solid @seaBlue;
     border-bottom: 5px solid @seaBlue;
-    min-height: 265px;
+    min-height: 270px;
     padding: 10px;
   }
 
