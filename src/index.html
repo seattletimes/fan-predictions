@@ -73,7 +73,7 @@
 
     <div class="header">
       <a class="share"></a>
-      <h1>Super bowl pick &rsquo;em<br><span class="green">Seahawks</span><span class="blue">vs</span><span class="red">Patriots</span></h1>
+      <h1>Super bowl pick &rsquo;em<br><span class="green">Seahawks</span> <span class="blue">vs</span> <span class="red">Patriots</span></h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Share your story on our <a href="http://projects.seattletimes.com/2014/hawks-fan-map" class="fancy-ref"><i class="fa fa-globe"></i> Hawks fan map.</a></p>
     </div>
@@ -83,15 +83,24 @@
     <div class="container">
       <div class="fan-predictions">
         <div class="sidebar">
+          <p class="sidebar-title">Who's going to win the Super Bowl this year?</p>
           <div>
-            Seahawks: <%= seahawkPercent %>%
-            <br>
-            Patriots: <%= patriotPercent %>%
+            <div class="sidebar-box">
+              <div class="team-box seahawks">
+                <div class="team seahawks">Seahawks</div>
+                <div class="percent"><%= seahawkPercent %>%</div>
+              </div>
+              <div class="team-box patriots">
+                <div class="team patriots">Patriots</div>
+                <div class="percent"><%= patriotPercent %>%</div>
+              </div>
+              <div class="add-yourself">Add yourself!</div>
+            </div>
           </div>
-          <div class="add-yourself">Add yourself!</div>
         </div>
 
         <div class="scatter-box">
+          <div class="y axis">Patriots</div>
           <div class="scatterplot">
             <% for (var index in groupedPredictions) { 
               var p = groupedPredictions[index]; %>
@@ -104,6 +113,7 @@
               </div>
             <% } %>
           </div>
+          <div class="x axis">Seahawks</div>
         </div>
       </div>
       
@@ -112,7 +122,7 @@
     </div>
 
     <script src="app.js"></script>
-    <% /*= t.include("partials/_adFoot.html"); */ %>
+    <%= t.include("partials/_adFoot.html") %>
     <%= t.include("partials/_workHere.html") %>
   </body>
 </html>

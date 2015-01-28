@@ -13,9 +13,7 @@
 @import "page";
 @import "tiles";
 
-@block: 'Oswald', sans-serif;
-@sans-serif: Helvetica, Arial, sans-serif;
-
+// MEDIA  
 @mobile: ~"(max-width: 480px)";
 @tablet: ~"(max-width: 768px)";
 
@@ -69,18 +67,42 @@ a {
 .fan-predictions {
   width: 50%;
   float: left;
+  padding-right: 30px;
 }
 
 .scatter-box {
   padding-bottom: 100%;
   position: relative;
 
+  .axis {
+    font-family: @paytone;
+    position: absolute;
+    text-transform: uppercase;
+
+    &.x {
+      width: 100%;
+      text-align: center;
+      margin-left: 30px;
+    }
+
+    &.y {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      top: 50%;
+      left: 2%;
+      margin-left: -38px;
+      margin-right: -38px;
+    }
+  }
+
   .scatterplot {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 89%;
+    height: 89%;
+    margin: 30px;
   }
 }
 
@@ -148,15 +170,72 @@ a {
 
 .sidebar {
   background: #EEE;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+
+  .sidebar-title {
+    font-family: @paytone;
+    font-weight: bold;
+  }
+
+  .sidebar-box {
+    float: left;
+
+    .team-box {
+      float: left;
+      margin-right: 10px;
+
+      &.seahawks {
+        border: 4px solid @seahawks;
+      }
+
+      &.patriots {
+        border: 4px solid @patriots;
+      }
+
+      .team {
+        font-size: 1.5em;
+        font-family: @block;
+        text-transform: uppercase;
+        color: @seaBlue;
+        text-align: center;
+        padding: 3px;
+
+        &.seahawks {
+          background: @seahawks;
+        }
+
+        &.patriots {
+         background: @patriots;
+        }
+      }
+    }
+
+    .percent {
+      font-size: 2.5em;
+      font-weight: bold;
+      font-family: @paytone;
+      padding: 10px;
+      background: white;
+      color: @seaBlue;
+    }
+  }
 
   .add-yourself {
     cursor: pointer;
     display: inline-block;
-    margin: 50px;
     font-size: 0.9em;
     font-family: @block;
     text-transform: uppercase;
     font-weight: normal;
     padding: 8px;
+    color: white;
+    background: @seaBlue;
+    transition: background .1s linear;
+
+    &:hover {
+      background: @seaGray;
+    }
   }
 }
