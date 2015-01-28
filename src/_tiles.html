@@ -1,19 +1,19 @@
 <div class="body-text">
   <% json.Predictions_Sheet1.forEach(function(prediction) { %>
-<div class="prediction">  
-  <div class="card-top">
-      <img class="mug" src="assets/<%= prediction.mug %>.jpg">
-      <div class="info">
-        <p class="name"><%= prediction.name %></p>
-        <p class="title">&mdash; <%= prediction.title %></p>
+    <div class="prediction">  
+      <div class="card-top">
+          <img class="mug" src="assets/<%= prediction.mug %>.jpg">
+          <div class="info">
+            <p class="name"><%= prediction.name %></p>
+            <p class="title">&mdash; <%= prediction.title %></p>
+          </div>
+          <div class="clearing"></div>
       </div>
-      <div class="clearing"></div>
-  </div>
-  <div class="lower">
-    <p class="score"><%= prediction.score %></p>
-    <p class="winner <%= prediction.color %>"><%= prediction.winner %></p>
-    <p class="comment">&ldquo;<%= prediction.comment %>&rdquo;</p>
-  </div>
-</div>  
-<% }) %>
+      <div class="lower">
+        <p class="score"><%= prediction.score %></p>
+        <p class="winner <%= prediction.color %>"><%= prediction.winner %></p>
+        <p class="comment">&ldquo;<%= prediction.comment %>&rdquo;</p>
+      </div>
+    </div>  
+  <% }) %>
 </div>
