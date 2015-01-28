@@ -64,29 +64,36 @@
   </head>
 
   <body>
-
     <nav class="top-bar">
+      <%= t.include("partials/_adTop.html") %>
       <a class="logo" href="http://seattletimes.com">
-        <img src="http://seattletimes.com/art/ui/seattletimeslogo_home.svg">
+        <img src="assets/logo-transparent.png" />
       </a>
     </nav>
 
-    <%= t.include("_form.html") %>
-
-    <h1>Who's Going to Win the Super Bowl?</h1>
+    <div class="header">
+      <a class="share"></a>
+      <h1>Super bowl pick &rsquo;em<br><span class="green">Seahawks</span><span class="blue">vs</span><span class="red">Patriots</span></h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Share your story on our <a href="http://projects.seattletimes.com/2014/hawks-fan-map" class="fancy-ref"><i class="fa fa-globe"></i> Hawks fan map.</a></p>
+    </div>
 
     <div class="container">
-      <div class="scatterplot">
-        <% for (var index in groupedPredictions) { 
-          var p = groupedPredictions[index]; %>
-          <div class="point-container <%= p.team %>">
-            <div class="point" style="left: <%= p.x %>%; bottom: <%= p.y %>%; opacity: <%= p.opacity %>;"></div>
-            <div class="tooltip" style="left: <%= p.x + 3 %>%; bottom: <%= p.y - 8 %>%;">
-              <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
-              Count: <%= p.count %>
-            </div>
+      <div class="scatter-box-outer">
+        <div class="scatter-box-inner">
+          <div class="scatterplot">
+            <% for (var index in groupedPredictions) { 
+              var p = groupedPredictions[index]; %>
+              <div class="point-container <%= p.team %>" style="left: <%= p.x %>%; bottom: <%= p.y %>%;">
+                <div class="point" style="opacity: <%= p.opacity %>;"></div>
+                <div class="tooltip">
+                  <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
+                  Count: <%= p.count %>
+                </div>
+              </div>
+            <% } %>
           </div>
-        <% } %>
+        </div>
       </div>
 
       <div class="sidebar">
@@ -99,6 +106,8 @@
         <div class="add-yourself">Add yourself!</div>
       </div>
     </div>
+
+    <%= t.include("_tiles.html") %>
 
     <script src="app.js"></script>
     <% /*= t.include("partials/_adFoot.html"); */ %>

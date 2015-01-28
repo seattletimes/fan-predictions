@@ -5,20 +5,45 @@
   box-sizing: border-box;
 }
 
+// IMPORTS
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(http://fonts.googleapis.com/css?family=Paytone+One);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
 @import "form";
 @import "page";
+@import "tiles";
 
 @block: 'Oswald', sans-serif;
 @sans-serif: Helvetica, Arial, sans-serif;
 
-@main: #00163f;
-@patriots: #c1051d;
-@seahawks: #57c40f;
-
 @mobile: ~"(max-width: 480px)";
+@tablet: ~"(max-width: 768px)";
+
+// COLORS
+@seaGreen: #4EAE47;
+@seaBlue: #06192E;
+@seaGray: #666666;
+@black: #222222;
+@light-gray: #CCCCCC;
+@patriots: #C80815; //red
+@seahawks: #4EAE47; //green
+
+// FONTS
+@block: 'Oswald', Helvetica, sans-serif;
+@paytone: 'Paytone One', sans-serif;
+@pt: 'PT Sans', sans-serif;
+@sans-serif: Helvetica, Arial, sans-serif;
+@serif: Georgia, Times, serif;
 
 body {
-  font-family: @sans-serif;
+  font-family: @pt;
+  color: @seaGray;
+  opacity: 0.9;
+  margin: 0px;
+}
+
+a {
+  color: @seaGray;
 }
 
 .container {
@@ -26,23 +51,36 @@ body {
   margin: auto;
 }
 
-.scatterplot {
-  height: 600px;
-  width: 600px;
+.scatter-box-outer {
+  width: 50%;
   float: left;
-  margin-left: 50px;
+
+  .scatter-box-inner {
+    padding-bottom: 100%;
+    position: relative;
+
+    .scatterplot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.scatterplot {
   border-left: 1px solid #888;
   border-bottom: 1px solid #888;
-  position: relative;
-  margin-top: 50px;
 
   .point-container {
     cursor: pointer;
+    position: absolute;
 
     &.seahawks {
       .point {
         background: @seahawks;
-        border: 3px solid @main;
+        border: 3px solid @seaBlue;
       }
 
       .tooltip {
@@ -53,7 +91,7 @@ body {
     &.patriots {
       .point {
         background: @patriots;
-        border: 3px solid @main;
+        border: 3px solid @seaBlue;
       }
 
       .tooltip {
@@ -62,10 +100,12 @@ body {
     }
 
     .point {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 7px;
+      @size: 14px;
+      margin-left: -(@size / 2);
+      margin-top: -(@size / 2);
+      width: @size;
+      height: @size;
+      border-radius: 100%;
     }
 
     .tooltip {
@@ -92,9 +132,18 @@ body {
 }
 
 .sidebar {
+  background: #EEE;
+  float: left;
+  width: 50%;
+
   .add-yourself {
     cursor: pointer;
     display: inline-block;
     margin: 50px;
+    font-size: 0.9em;
+    font-family: @block;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 8px;
   }
 }

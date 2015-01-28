@@ -1,6 +1,20 @@
-nav.top-bar {
-  border-bottom: 1px solid #AAA;
+#adtopright, #adbottom {
+  height: 90px;
+  width: 728px;
+  margin: 0 auto 0 auto;
+  clear: both;
+
+  @media @mobile {
+    display: none;
+  }
+}
+
+.top-bar {
   position: relative;
+  border-bottom: 1px solid fade(@light-gray, 50%);
+  background: @seaGray;
+  width: 100%;
+  padding-top: 10px;
 
   .logo {
     width: 100%;
@@ -8,19 +22,75 @@ nav.top-bar {
     top: 30px;
     text-align: center;
     display: block;
-    
+
     img {
       box-sizing: content-box;
       height: 30px;
-      background: white;
+      background: @seaBlue;
       padding: 10px;
       border: none;
+      border-image-source: initial;
+      border-image-slice: initial;
+      border-image-width: initial;
+      border-image-outset: initial;
+      border-image-repeat: initial;
     }
   }
 }
 
-h1 {
-  font-family: @block;
-  text-transform: uppercase;
+.header {
+  position: relative;
   text-align: center;
+  margin: 0 auto 2em;
+  max-width: 1024px;
+
+  .share {
+    position: absolute;
+    border-radius: 4px;
+    padding: 2px;
+    top: 16px;
+    right: 8px;
+    z-index: 999;
+  }
+
+  a.share.sharer-0 {
+    width: 96px;
+    height: 24px;
+
+    label {
+      background-color: fade(@seaGray, 20%);
+      color: @seaGray;
+    }
+
+    label:hover {
+      opacity: 1;
+      background-color: fade(@seaGray, 30%);
+    }
+  }
+  
+  h1 {
+    font-size: 3em;
+    font-family: @paytone;
+    text-transform: uppercase;
+    color: @seaBlue;
+    margin: 1em 0 0 0;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin-top: 0;
+  }
+
+  .fancy-ref {
+    text-decoration: none;
+    background-color: fade(@seaGray, 20%);
+    padding: 3px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .fancy-ref:hover {
+    background-color: fade(@seaGray, 30%);
+  }
 }

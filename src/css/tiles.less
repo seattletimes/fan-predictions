@@ -1,0 +1,111 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.body-text {
+  min-width: 1024px;
+  padding: 0 1em 1em;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.prediction {
+  padding: 15px;
+  display: inline-block;
+  width: 23%;
+  margin-right: 1%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.card-top {
+  background-color: @seaBlue;
+}
+
+.lower {
+  border-right: 5px solid @seaBlue;
+  border-left: 5px solid @seaBlue;
+  border-bottom: 5px solid @seaBlue;
+}
+.red {
+  border-color: @patriots;
+  color: @patriots;
+}
+
+.green {
+  border-color: @seahawks;
+  color: @seahawks;
+}
+.blue {
+  color:@seaBlue;
+  text-transform: lowercase;
+}
+
+.name {
+  font-family: @paytone;
+  color: white;
+  font-size: 1.5em;
+  margin: 10px 0 5px 0;
+}
+
+.title {
+  font-size: 18px;
+  color: darkgrey;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.score {
+  font-size: 3em;
+  font-family: @paytone;
+  color: @seaGray;
+  margin: 10px 0 0 0;
+}
+
+.winner {
+  font-size: 24px; 
+  font-family: @paytone;
+  margin-top: -8px;
+}
+
+.comment {
+  font-size: 18px; 
+  color: black;
+}
+
+footer {
+  background: @seaGray;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+}
+
+.mug {
+  width: 60px;
+  height: 60px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  float: left; 
+  margin: 10px 20px 0 20px;
+}
+
+.info {
+  float: left;
+  width: 63%;
+}
+
+.clearing {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.lower {
+  margin-top: -10px;
+}
