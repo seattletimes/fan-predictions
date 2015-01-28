@@ -78,9 +78,20 @@
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Share your story on our <a href="http://projects.seattletimes.com/2014/hawks-fan-map" class="fancy-ref"><i class="fa fa-globe"></i> Hawks fan map.</a></p>
     </div>
 
+    <%= t.include("_form.html") %>
+
     <div class="container">
-      <div class="scatter-box-outer">
-        <div class="scatter-box-inner">
+      <div class="fan-predictions">
+        <div class="sidebar">
+          <div>
+            Seahawks: <%= seahawkPercent %>%
+            <br>
+            Patriots: <%= patriotPercent %>%
+          </div>
+          <div class="add-yourself">Add yourself!</div>
+        </div>
+
+        <div class="scatter-box">
           <div class="scatterplot">
             <% for (var index in groupedPredictions) { 
               var p = groupedPredictions[index]; %>
@@ -95,19 +106,10 @@
           </div>
         </div>
       </div>
+      
+      <%= t.include("_tiles.html") %>
 
-      <div class="sidebar">
-        <div>
-          Seahawks: <%= seahawkPercent %>%
-          <br>
-          Patriots: <%= patriotPercent %>%
-        </div>
-
-        <div class="add-yourself">Add yourself!</div>
-      </div>
     </div>
-
-    <%= t.include("_tiles.html") %>
 
     <script src="app.js"></script>
     <% /*= t.include("partials/_adFoot.html"); */ %>
