@@ -78,42 +78,43 @@
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Share your story on our <a href="http://projects.seattletimes.com/2014/hawks-fan-map" class="fancy-ref"><i class="fa fa-globe"></i> Hawks fan map.</a></p>
     </div>
 
-    <%= t.include("_form.html") %>
-
     <div class="container">
       <div class="fan-predictions">
-        <div class="form">Hello world</div>
 
-        <div class="scatter-box">
-          <div class="y axis">Patriots</div>
-          <div class="scatterplot">
-            <% for (var index in groupedPredictions) { 
-              var p = groupedPredictions[index]; %>
-              <div class="point-container <%= p.team %>" style="left: <%= p.x %>%; bottom: <%= p.y %>%;">
-                <div class="point" style="opacity: <%= p.opacity %>;"></div>
-                <div class="tooltip">
-                  <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
-                  Count: <%= p.count %>
+        <div class="form-container"><%= t.include("_form.html") %></div>
+
+        <div class="results">
+          <div class="scatter-box">
+            <div class="y axis">Patriots</div>
+            <div class="scatterplot">
+              <% for (var index in groupedPredictions) { 
+                var p = groupedPredictions[index]; %>
+                <div class="point-container <%= p.team %>" style="left: <%= p.x %>%; bottom: <%= p.y %>%;">
+                  <div class="point" style="opacity: <%= p.opacity %>;"></div>
+                  <div class="tooltip">
+                    <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
+                    Count: <%= p.count %>
+                  </div>
                 </div>
-              </div>
-            <% } %>
+              <% } %>
+            </div>
+            <div class="x axis">Seahawks</div>
           </div>
-          <div class="x axis">Seahawks</div>
-        </div>
 
-        <div class="sidebar">
-          <p class="sidebar-title">Who's going to win the Super Bowl this year?</p>
-          <div>
-            <div class="sidebar-box">
-              <div class="team-box seahawks">
-                <div class="team seahawks">Seahawks</div>
-                <div class="percent"><%= seahawkPercent %>%</div>
+          <div class="sidebar">
+            <p class="sidebar-title">Who's going to win the Super Bowl this year?</p>
+            <div>
+              <div class="sidebar-box">
+                <div class="team-box seahawks">
+                  <div class="team seahawks">Seahawks</div>
+                  <div class="percent"><%= seahawkPercent %>%</div>
+                </div>
+                <div class="team-box patriots">
+                  <div class="team patriots">Patriots</div>
+                  <div class="percent"><%= patriotPercent %>%</div>
+                </div>
+                <div class="add-yourself">Add yourself!</div>
               </div>
-              <div class="team-box patriots">
-                <div class="team patriots">Patriots</div>
-                <div class="percent"><%= patriotPercent %>%</div>
-              </div>
-              <div class="add-yourself">Add yourself!</div>
             </div>
           </div>
         </div>

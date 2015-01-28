@@ -3,55 +3,15 @@
 // @import "util";
 // @import "radio";
 
-.overlay {
-  background: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999999;
+.form-container {
   width: 100%;
-  height: 100%;
-  display: none;
-  transition: background .2s linear;
-
-  .modal {
-    position: relative;
-    display: block;
-    top: 100px;
-    margin: auto;
-    width: 768px;
-    max-width: 100%;
-    padding: 2em 3em 3em;
-    border-radius: 4px;
-    background: @seaBlue;
-    color: rgba(255,255,255,0.8);
-    box-shadow: 0 8px 8px rgba(0, 0, 0, .3);
-
-    @media @mobile {
-      top: 10px;
-    }
-
-    .skip {
-      position: absolute;
-      top: 0px;
-      right: 4px;
-      cursor: pointer;
-      font-size: 24px;
-      color: gray;
-
-      &:hover {
-        color: lighten(gray, 10%);
-      }
-    }
-  }
-
-  &.visible {
-    background: rgba(0, 0, 0, .8);
-    display: block;
-  }
 }
 
 .form-panel {
+  background: #EEE;
+  margin: auto;
+  width: 400px;
+  padding: 40px;
 
   h2 {
     font-family: @block;
@@ -64,9 +24,19 @@
     margin-top: 0;
   }
 
+  .team-box {
+    float: left;
+    margin-right: 10px;
+
+    .team {
+      font-family: @paytone;
+      font-size: 18px;
+      padding-right: 5px;
+    }
+  }
+
   input {
-    // display: block;
-    width: 50px;
+    width: 95px;
     margin: 5px 0 15px 0;
   }
 
@@ -74,6 +44,7 @@
     border: 1px solid #CCC;
     font-size: 1em;
     padding: 6px;
+    margin-right: 6px;
   }
 
   button {
@@ -89,6 +60,9 @@
   }
 
   .submit {
+    cursor: pointer;
+    font-family: @block;
+    letter-spacing: 1px;
     font-size: 0.9em;
     padding: 8px;
     margin-left: 15px;
@@ -105,7 +79,7 @@
     background: #822;
     color: white;
     text-align: center;
-    margin: 8px 0;
+    margin-top: 35px;
     padding: 8px;
     display: none;
   }
@@ -116,11 +90,15 @@
     }
   }
 
+  .message {
+ 
+  }
+
   .view-results {
     display: none;
     margin-top: 1em;
     font-size: 0.9em;
-    font-family: @block;
+    font-family: @paytone;
     text-transform: uppercase;
     font-weight: normal;
     padding: 8px;

@@ -4,9 +4,11 @@ require("./form");
 var $ = require("jquery");
 
 $(".skip, .view-results").on("click", function() {
-  $(".overlay").removeClass("visible");
+  $(".results").show();
+  $(".form-panel").hide();
 });
 
 $(".add-yourself").on("click", function() {
-  $(".overlay").addClass("visible");
+  $(".results").hide();
+  $(".form-panel").show();
 });

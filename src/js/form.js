@@ -13,9 +13,9 @@ form.find(".submit").attr("disabled", null);
 
 //do not show form if it has been submitted before
 if (cookie.read("sfm-sent")) {
-   $(".overlay").hide();
-  // $(".add-yourself").hide();
-  $(".thanks").show();
+  $(".form-panel").hide();
+  $(".add-yourself").hide();
+  $(".results").show();
 }
 
 form.on("click", ".submit", function() {
@@ -37,6 +37,8 @@ form.on("click", ".submit", function() {
     panel.addClass("invalid");
     $(".validation.error").html(errorMsg);
     return;
+  } else {
+    panel.removeClass("invalid");
   }
   
   self.disabled = true;
@@ -52,6 +54,7 @@ form.on("click", ".submit", function() {
   submission.done(function(data) {
     message.html("Thanks for submitting your prediction. New fan data is added throughout the day. Your input may not show up immediately.");
     $(".view-results").show();
+    $(".add-yourself").hide();
     cookie.write("sfm-sent", true);
   });
 
