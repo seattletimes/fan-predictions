@@ -94,3 +94,19 @@
     background-color: fade(@seaGray, 30%);
   }
 }
+
+
+  footer {
+    background: @seaGray;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+  }
+
+   .clearing {
+      &::after {
+          content: "";
+          display: block;
+          clear: both;
+      }
+  }
