@@ -13,7 +13,7 @@ form.find(".submit").attr("disabled", null);
 
 //do not show form if it has been submitted before
 if (cookie.read("sfm-sent")) {
-  $(".overlay").hide();
+   $(".overlay").hide();
   // $(".add-yourself").hide();
   $(".thanks").show();
 }

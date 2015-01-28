@@ -65,14 +65,14 @@ a {
 }
 
 .fan-predictions {
-  width: 50%;
-  float: left;
-  padding-right: 30px;
+  width: 100%;
 }
 
 .scatter-box {
-  padding-bottom: 100%;
+  padding-bottom: 50%;
   position: relative;
+  float: left;
+  width: 50%;
 
   .axis {
     font-family: @paytone;
@@ -172,11 +172,13 @@ a {
   background: #EEE;
   padding: 10px;
   display: inline-block;
-  width: 100%;
+  width: 50%;
+  float: left;
 
   .sidebar-title {
     font-family: @paytone;
     font-weight: bold;
+    color: @seaBlue;
   }
 
   .sidebar-box {
@@ -231,11 +233,11 @@ a {
     font-weight: normal;
     padding: 8px;
     color: white;
-    background: @seaBlue;
+    background: @seaGray;
     transition: background .1s linear;
 
     &:hover {
-      background: @seaGray;
+      background: @seaBlue;
     }
   }
 }
