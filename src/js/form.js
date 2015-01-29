@@ -1,7 +1,7 @@
 var $ = require("jquery");
 var formUtil = require("./form-utils");
 var cookie = require("./cookies");
-var graph = require("./graph")
+var placeUser = require("./graph")
 
 var panel = $(".form-panel");
 var endpoint = "https://script.google.com/macros/s/AKfycbzN-l4_B5W3tHS8sYRCgBBSj1KKgAEPaZBh7cXG7sjDyGCEqbQ/exec";
@@ -21,7 +21,7 @@ if (cookie.read("sfm-sent")) {
 
 var stored = localStorage.score;
 if (stored) {
-  graph.placeUser(stored);
+  placeUser(stored);
 }
 
 form.on("click", ".submit", function() {
@@ -64,7 +64,7 @@ form.on("click", ".submit", function() {
     cookie.write("sfm-sent", true);
     var stored = packet.seahawks + "-" + packet.patriots;
     localStorage.score = stored;
-    graph.placeUser(stored);
+    placeUser(stored);
   });
 
   submission.fail(function() {
