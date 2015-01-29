@@ -80,13 +80,13 @@
   hawkScoreDiffs.forEach(function(diff) {
     avgHawkDiff += diff;
   });
-  avgHawkDiff = avgHawkDiff / hawkScoreDiffs.length;
+  avgHawkDiff = Math.round(avgHawkDiff / hawkScoreDiffs.length);
 
   var avgPatDiff = 0;
   patScoreDiffs.forEach(function(diff) {
     avgPatDiff += diff;
   });
-  avgPatDiff = avgPatDiff / patScoreDiffs.length;
+  avgPatDiff = Math.round(avgPatDiff / patScoreDiffs.length);
 %>
 
 <!doctype html>
@@ -150,11 +150,14 @@
                 <div class="team-box seahawks">
                   <div class="team seahawks">Seahawks</div>
                   <div class="percent"><%= seahawkPercent %>%</div>
-                  <%= avgHawkDiff %>  <%= avgPatDiff %>
+                  favored by<br>an average of
+                  <div class="avg-diff"><%= avgHawkDiff %> points</div>
                 </div>
                 <div class="team-box patriots">
                   <div class="team patriots">Patriots</div>
                   <div class="percent"><%= patriotPercent %>%</div>
+                  favored by<br>an average of
+                  <div class="avg-diff"><%= avgPatDiff %> points</div>
                 </div>
                 <div class="add-yourself">Add yourself</div>
               </div>
