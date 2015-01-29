@@ -3,6 +3,13 @@
 require("./form");
 var $ = require("jquery");
 
+var Share = require("share");
+new Share(".share", {
+  ui: {
+    flyout: "bottom left"
+  }
+});
+
 $(".skip").on("click", function() {
   $(".results").show();
   $(".form-container").hide();
