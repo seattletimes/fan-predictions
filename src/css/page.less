@@ -69,11 +69,17 @@
   }
   
   h1 {
-    font-size: 3em;
+    font-size: 3.2em;
     font-family: @paytone;
     text-transform: uppercase;
     color: @seaBlue;
     margin: 1em 0 0 0;
+    // @media @tablet {
+    //   font-size: 2.6em;
+    // }
+    @media (~"max-width: 400px") {
+      font-size: 2.6em;
+    }
   }
 
   p {
