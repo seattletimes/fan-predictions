@@ -8,7 +8,7 @@
 // IMPORTS
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Paytone+One);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
 @import "form";
 @import "page";
 @import "tiles";
@@ -66,18 +66,24 @@ a {
 }
 
 .fan-predictions {
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 
 .results {
   display: none;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.scatter-box-outer {
+  width: calc(~"100% - 320px");
+  float: left;
 }
 
 .scatter-box {
-  padding-bottom: 50%;
+  padding-bottom: 100%;
   position: relative;
-  float: left;
-  width: 50%;
 
   .axis {
     font-family: @paytone;
@@ -88,6 +94,7 @@ a {
       width: 100%;
       text-align: center;
       margin-left: 30px;
+      bottom: 0;
     }
 
     &.y {
@@ -95,19 +102,17 @@ a {
       -moz-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
       top: 50%;
-      left: 2%;
-      margin-left: -38px;
-      margin-right: -38px;
+      left: 0;
+      transform-origin: top left;
     }
   }
 
   .scatterplot {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 89%;
-    height: 89%;
-    margin: 30px;
+    left: 20px;
+    width: calc(~"100% - 20px");
+    height: calc(~"100% - 20px");
   }
 }
 
@@ -138,6 +143,13 @@ a {
 
       .tooltip {
         border-top: 4px solid @patriots;
+      }
+    }
+
+    &.user {
+      .point {
+        background: @seaGray;
+        border: 3px solid @seaBlue;
       }
     }
 
@@ -174,9 +186,9 @@ a {
 }
 
 .sidebar {
-  padding: 10px;
+  padding-left: 70px;
   display: inline-block;
-  width: 50%;
+  width: 320px;
   float: left;
 
   .sidebar-title {

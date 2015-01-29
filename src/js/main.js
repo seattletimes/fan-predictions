@@ -3,12 +3,12 @@
 require("./form");
 var $ = require("jquery");
 
-$(".skip, .view-results").on("click", function() {
+$(".skip").on("click", function() {
   $(".results").show();
-  $(".form-panel").hide();
+  $(".form-container").hide();
 });
 
 $(".add-yourself").on("click", function() {
   $(".results").hide();
-  $(".form-panel").show();
+  $(".form-container").show();
 });
