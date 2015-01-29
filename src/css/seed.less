@@ -68,6 +68,11 @@ a {
 .fan-predictions {
   width: 80%;
   margin: auto;
+
+  @media @landscape {
+    width: 100%;
+    margin-left: 30px;
+  }
 }
 
 .results {
@@ -77,7 +82,7 @@ a {
 }
 
 .scatter-box-outer {
-  width: calc(~"100% - 320px");
+  width: calc(~"100% - 350px");
   float: left;
 }
 
@@ -160,7 +165,7 @@ a {
 
     &.user {
       .point {
-        background: @seaGray;
+        background: #E8D30C;
         border: 3px solid @seaBlue;
       }
     }
@@ -200,8 +205,9 @@ a {
 .sidebar {
   padding-left: 70px;
   display: inline-block;
-  width: 320px;
+  width: 350px;
   float: left;
+  text-align: center;
 
   .sidebar-title {
     font-family: @paytone;
@@ -210,7 +216,7 @@ a {
   }
 
   .sidebar-box {
-    float: left;
+    display: inline-block;
 
     .team-box {
       margin-bottom: 10px;
@@ -255,17 +261,16 @@ a {
   .add-yourself {
     cursor: pointer;
     display: inline-block;
-    font-size: 0.9em;
-    font-family: @block;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: bold;
     padding: 8px;
+    letter-spacing: 1px;
     color: white;
-    background: @seaGray;
+    background: @seaBlue;
     transition: background .1s linear;
 
     &:hover {
-      background: @seaBlue;
+      background: @seaGray;
     }
   }
 }

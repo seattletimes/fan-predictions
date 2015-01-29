@@ -11,16 +11,30 @@
   var counts = [];
   var seahawkCount = 0;
   var patriotCount = 0;
+  var hawkScoreDiffs = [];
+  var patScoreDiffs = [];
 
   predictionData.forEach(function(p) { 
-    hawkScores.push(p.seahawks * 1); 
-    patScores.push(p.patriots * 1) 
+    // scores have to be numbers, damnit
+    p.seahawks = p.seahawks * 1;
+    p.patriots = p.patriots * 1;
+
+    hawkScores.push(p.seahawks); 
+    patScores.push(p.patriots);
+
+    // keep track of score differentials for both teams
+    console.log(p.seahawks, p.patriots, p.seahawks - p.patriots)
+    if (p.seahawks > p.patriots) {
+      hawkScoreDiffs.push(p.seahawks - p.patriots);
+    } else {
+      patScoreDiffs.push(p.patriots - p.seahawks);
+    }
 
     var finalScore = p.seahawks + "-" + p.patriots;
     if (!groupedPredictions[finalScore]) { 
       groupedPredictions[finalScore] = {
-        seahawks: p.seahawks * 1,
-        patriots: p.patriots * 1,
+        seahawks: p.seahawks,
+        patriots: p.patriots,
         count: 0
       }
     }
@@ -60,6 +74,19 @@
       axis.push({score: score, percent: percent})
     }
   });
+
+  // calculate average score differential for both teams
+  var avgHawkDiff = 0;
+  hawkScoreDiffs.forEach(function(diff) {
+    avgHawkDiff += diff;
+  });
+  avgHawkDiff = avgHawkDiff / hawkScoreDiffs.length;
+
+  var avgPatDiff = 0;
+  patScoreDiffs.forEach(function(diff) {
+    avgPatDiff += diff;
+  });
+  avgPatDiff = avgPatDiff / patScoreDiffs.length;
 %>
 
 <!doctype html>
@@ -123,12 +150,13 @@
                 <div class="team-box seahawks">
                   <div class="team seahawks">Seahawks</div>
                   <div class="percent"><%= seahawkPercent %>%</div>
+                  <%= avgHawkDiff %>  <%= avgPatDiff %>
                 </div>
                 <div class="team-box patriots">
                   <div class="team patriots">Patriots</div>
                   <div class="percent"><%= patriotPercent %>%</div>
                 </div>
-                <div class="add-yourself">Add yourself!</div>
+                <div class="add-yourself">Add yourself</div>
               </div>
             </div>
           </div>
