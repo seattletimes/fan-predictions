@@ -9,11 +9,11 @@
     float: none !important;
   }
 
-  img {
-    float: left;
+  img.floatleft {
+    display: none !important;
   }
 
-  @media @mobile {
+  @media (~"max-width: 760px") {
     display: none;
   }
 }
@@ -86,8 +86,13 @@
     color: @seaBlue;
     margin: 1em 0 0 0;
 
+    @media @tablet {
+      line-height: 50px;
+    }
+
     @media (~"max-width: 400px") {
       font-size: 2.6em;
+      line-height: 42px;
     }
   }
 
@@ -96,6 +101,10 @@
     line-height: 1.4em;
     margin-top: 0;
     margin: 0 10px;
+
+    @media @tablet {
+      padding-top: 10px;
+    }
   }
 
   .notables {
@@ -115,7 +124,7 @@ footer {
   width: 100%;
   position: absolute;
 
-  @media @mobile {
+  @media (~"max-width: 760px") {
     height: 50px;
   }
 }
