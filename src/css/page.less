@@ -1,8 +1,16 @@
 #adtopright, #adbottom {
-  height: 90px;
-  width: 728px;
   margin: 0 auto 0 auto;
   clear: both;
+  height: 90px;
+  text-align: center;
+
+  img {
+    float: left;
+  }
+
+  a {
+    display: inline-block;
+  }
 
   @media @mobile {
     display: none;
@@ -110,17 +118,25 @@
   }
 }
 
-  footer {
-    background: @seaGray;
-    height: 200px;
-    width: 100%;
-    position: absolute;
-  }
+footer {
+  background: @seaGray;
+  height: 200px;
+  width: 100%;
+  position: absolute;
+}
 
-   .clearing {
-      &::after {
-          content: "";
-          display: block;
-          clear: both;
-      }
-  }
+ .clearing {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.credits {
+  color: @seaBlue;
+  font-family: @block;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+}
