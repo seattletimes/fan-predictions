@@ -121,6 +121,26 @@
         <div class="form-container"><%= t.include("_form.html") %></div>
 
         <div class="results">
+          <div class="sidebar">
+            <p class="sidebar-title">CURRENT FAVORITE:</p>
+            <div>
+              <div class="sidebar-box">
+                <div class="team-box seahawks">
+                  <div class="team seahawks">Seahawks</div>
+                  <div class="percent"><%= seahawkPercent %>%</div>
+                  favored by<br>an average of
+                  <div class="avg-diff"><%= avgHawkDiff %> points</div>
+                </div>
+                <div class="team-box patriots">
+                  <div class="team patriots">Patriots</div>
+                  <div class="percent"><%= patriotPercent %>%</div>
+                  favored by<br>an average of
+                  <div class="avg-diff"><%= avgPatDiff %> points</div>
+                </div>
+                <div class="add-yourself">Add yourself</div>
+              </div>
+            </div>
+          </div>
           <div class="scatter-box-outer">
             <div class="scatter-box">
               <div class="y axis">Patriots</div>
@@ -140,27 +160,6 @@
                 <% } %>
               </div>
               <div class="x axis">Seahawks</div>
-            </div>
-          </div>
-
-          <div class="sidebar">
-            <p class="sidebar-title">CURRENT FAVORITE:</p>
-            <div>
-              <div class="sidebar-box">
-                <div class="team-box seahawks">
-                  <div class="team seahawks">Seahawks</div>
-                  <div class="percent"><%= seahawkPercent %>%</div>
-                  favored by<br>an average of
-                  <div class="avg-diff"><%= avgHawkDiff %> points</div>
-                </div>
-                <div class="team-box patriots">
-                  <div class="team patriots">Patriots</div>
-                  <div class="percent"><%= patriotPercent %>%</div>
-                  favored by<br>an average of
-                  <div class="avg-diff"><%= avgPatDiff %> points</div>
-                </div>
-                <div class="add-yourself">Add yourself</div>
-              </div>
             </div>
           </div>
         </div>
