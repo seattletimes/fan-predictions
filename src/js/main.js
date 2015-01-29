@@ -13,12 +13,12 @@ $(".add-yourself").on("click", function() {
   $(".form-container").show();
 });
 
-$(".point").on("click", function(e) {
+$(".point").on("touchstart", function(e) {
   e.stopPropagation();
   $(".click-tooltip").removeClass("click-tooltip");
   $(e.target).next().addClass("click-tooltip");
 });
 
-$(".scatter-box-outer").on("click", function(e) {
+$(".scatter-box-outer").on("touchstart", function(e) {
   $(".click-tooltip").removeClass("click-tooltip");
 });
