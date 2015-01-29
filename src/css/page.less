@@ -12,7 +12,7 @@
   img {
     float: left;
   }
-  
+
   @media @mobile {
     display: none;
   }
@@ -54,11 +54,9 @@
   max-width: 1024px;
 
   .share {
-    position: absolute;
+    display: inline-block !important;
     border-radius: 4px;
-    padding: 2px;
-    top: 16px;
-    right: 8px;
+    padding-left: 8px;
     z-index: 999;
   }
 
@@ -105,18 +103,6 @@
       text-decoration: underline;
     }
   }
-
-  .fancy-ref {
-    text-decoration: none;
-    background-color: fade(@seaGray, 20%);
-    padding: 3px 6px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
-
-  .fancy-ref:hover {
-    background-color: fade(@seaGray, 30%);
-  }
 }
 
 footer {
@@ -140,9 +126,9 @@ footer {
 
 .credits {
   color: @seaBlue;
-  font-family: @block;
+  font-family: "PT Sans";
   text-align: center;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
   padding: 0 10px 20px 10px;
 
   @media @mobile {

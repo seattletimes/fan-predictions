@@ -6,7 +6,7 @@ var $ = require("jquery");
 var Share = require("share");
 new Share(".share", {
   ui: {
-    flyout: "bottom left"
+    flyout: "bottom center"
   }
 });
 
