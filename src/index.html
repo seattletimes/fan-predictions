@@ -52,6 +52,14 @@
   var totalCount = seahawkCount + patriotCount;
   var seahawkPercent = Math.round(seahawkCount / totalCount * 100);
   var patriotPercent = Math.round(patriotCount / totalCount * 100);
+
+  var axis = [];
+  var numbers = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70].forEach(function(score) {
+    if (score <= maxScore) {
+      var percent = score / maxScore * 100;
+      axis.push({score: score, percent: percent})
+    }
+  });
 %>
 
 <!doctype html>
@@ -93,6 +101,15 @@
                 <% for (var index in groupedPredictions) { 
                   var p = groupedPredictions[index]; %>
                   <%= t.ich.dot(p) %>
+                <% } %>
+
+                <% for (var index in axis) { %>
+                  <div class="x-num" style="left: <%= axis[index].percent %>%;">
+                    <%= axis[index].score %>
+                  </div>
+                  <div class="y-num" style="bottom: <%= axis[index].percent %>%;">
+                    <%= axis[index].score %>
+                  </div>
                 <% } %>
               </div>
               <div class="x axis">Seahawks</div>
