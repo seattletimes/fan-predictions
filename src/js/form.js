@@ -1,6 +1,7 @@
 var $ = require("jquery");
 var formUtil = require("./form-utils");
 var cookie = require("./cookies");
+var graph = require("./graph")
 
 var panel = $(".form-panel");
 var endpoint = "https://script.google.com/macros/s/AKfycbzN-l4_B5W3tHS8sYRCgBBSj1KKgAEPaZBh7cXG7sjDyGCEqbQ/exec";
@@ -16,6 +17,11 @@ if (cookie.read("sfm-sent")) {
   $(".form-panel").hide();
   $(".add-yourself").hide();
   $(".results").show();
+}
+
+var stored = localStorage.score;
+if (stored) {
+  graph.placeUser(stored);
 }
 
 form.on("click", ".submit", function() {
@@ -49,13 +55,16 @@ form.on("click", ".submit", function() {
     dataType: "jsonp"
   });
 
-  message.html("Submitting your prediction...");
+  message.show();
 
   submission.done(function(data) {
-    message.html("Thanks for submitting your prediction. New fan data is added throughout the day. Your input may not show up immediately.");
-    $(".view-results").show();
     $(".add-yourself").hide();
+    $(".results").show();
+    $(".form-panel").hide();
     cookie.write("sfm-sent", true);
+    var stored = packet.seahawks + "-" + packet.patriots;
+    localStorage.score = stored;
+    graph.placeUser(stored);
   });
 
   submission.fail(function() {

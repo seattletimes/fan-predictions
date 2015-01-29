@@ -6,6 +6,7 @@ and loadSheets, which import data in a compatible way.
 */
 
 var path = require("path");
+var ich = require("icanhaz");
 
 module.exports = function(grunt) {
 
@@ -29,6 +30,8 @@ module.exports = function(grunt) {
     var file = grunt.file.read(path.resolve("src/", where));
     return grunt.template.process(file, {data: data || grunt.data});
   };
+
+  grunt.template.ich = ich;
 
   grunt.registerTask("build", "Processes index.html using shared data (if available)", function() {
     var files = grunt.file.expandMapping(["**/*.html", "!**/_*.html", "!js/**/*.html"], "build", { cwd: "src" });

@@ -1,4 +1,7 @@
 <%
+  var dotTemplate = grunt.file.read("./src/js/_dot.html");
+  t.ich.addTemplate("dot", dotTemplate);
+
   var predictionData = json.FanPredictions_Predictions;
 
   var groupedPredictions = {};
@@ -58,7 +61,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <%= t.include("partials/_adHead.html") %>
   </head>
@@ -84,25 +86,21 @@
         <div class="form-container"><%= t.include("_form.html") %></div>
 
         <div class="results">
-          <div class="scatter-box">
-            <div class="y axis">Patriots</div>
-            <div class="scatterplot">
-              <% for (var index in groupedPredictions) { 
-                var p = groupedPredictions[index]; %>
-                <div class="point-container <%= p.team %>" style="left: <%= p.x %>%; bottom: <%= p.y %>%;">
-                  <div class="point" style="opacity: <%= p.opacity %>;"></div>
-                  <div class="tooltip">
-                    <div class="score"><%= p.seahawks %> - <%= p.patriots %></div>
-                    Count: <%= p.count %>
-                  </div>
-                </div>
-              <% } %>
+          <div class="scatter-box-outer">
+            <div class="scatter-box">
+              <div class="y axis">Patriots</div>
+              <div class="scatterplot">
+                <% for (var index in groupedPredictions) { 
+                  var p = groupedPredictions[index]; %>
+                  <%= t.ich.dot(p) %>
+                <% } %>
+              </div>
+              <div class="x axis">Seahawks</div>
             </div>
-            <div class="x axis">Seahawks</div>
           </div>
 
           <div class="sidebar">
-            <p class="sidebar-title">WIN-O-METER</p>
+            <p class="sidebar-title">CURRENT FAVORITE:</p>
             <div>
               <div class="sidebar-box">
                 <div class="team-box seahawks">
@@ -120,14 +118,19 @@
         </div>
       </div>
       
-<div class="clearing"></div>
+      <div class="clearing"></div>
       <%= t.include("_tiles.html") %>
     </div>
+
     <div class="clearing"></div>
-<footer>
-      <%= t.include("partials/_adFoot.html") %>
-</footer>
+    <footer>
+      <%= t.include("partials/_adBottom.html") %>
+    </footer>
+
+    <script>window.maxScore = <%= maxScore %>;</script>
+
     <script src="app.js"></script>
+    <%= t.include("partials/_adFoot.html") %>
     <%= t.include("partials/_workHere.html") %>
   </body>
 </html>
