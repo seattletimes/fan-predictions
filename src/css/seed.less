@@ -84,8 +84,6 @@ a {
 
 .results {
   display: none;
-  overflow: hidden;
-  margin-bottom: 50px;
 
   @media @tablet {
     width: 100%;
@@ -216,10 +214,24 @@ a {
       border: 1px solid #CCC;
       border-radius: 4px;
       padding: 10px;
-      z-index: 99;
+      z-index: 999999;
+      color: @seaBlue;
+      text-align: center;
 
       .score {
-        font-weight: bold;
+        font-family: @paytone;
+        font-size: 1.2em;
+      }
+
+      .team {
+        font-family: @paytone;
+      }
+
+      .count {
+        font-size: 0.8em;
+        color: @seaGray;
+        padding-top: 3px;
+        white-space: nowrap;
       }
     }
 
@@ -321,6 +333,7 @@ a {
       font-weight: bold;
       font-family: @paytone;
       padding: 10px;
+      padding-top: 0;
       background: white;
       color: @seaBlue;
       text-align: center;
