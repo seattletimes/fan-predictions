@@ -21,8 +21,8 @@
 @seaGray: #666666;
 @black: #222222;
 @light-gray: #CCCCCC;
-@patriots: #C80815; //red
-@seahawks: #4EAE47; //green
+@patriots: rgba(200, 8, 21, 1); //red
+@seahawks: rgba(78, 174, 1, 1); //green
 
 // FONTS
 @block: 'Oswald', Helvetica, sans-serif;
@@ -146,8 +146,8 @@ a {
 }
 
 .scatterplot {
-  border-left: 1px solid #888;
-  border-bottom: 1px solid #888;
+  border-left: 2px solid #888;
+  border-bottom: 2px solid #888;
 
   .x-num {
     position: absolute;
@@ -166,22 +166,12 @@ a {
     position: absolute;
 
     &.seahawks {
-      .point {
-        background: @seahawks;
-        border: 3px solid @seaBlue;
-      }
-
       .tooltip {
         border-top: 4px solid @seahawks;
       }
     }
 
     &.patriots {
-      .point {
-        background: @patriots;
-        border: 3px solid @seaBlue;
-      }
-
       .tooltip {
         border-top: 4px solid @patriots;
       }
@@ -189,8 +179,7 @@ a {
 
     &.user {
       .point {
-        background: #E8D30C;
-        border: 3px solid @seaBlue;
+        background: @seaBlue !important;
         opacity: 1 !important;
       }
     }
@@ -202,6 +191,7 @@ a {
       width: @size;
       height: @size;
       border-radius: 100%;
+      border: 1px solid @seaBlue;
     }
 
     .tooltip {
@@ -215,6 +205,8 @@ a {
       z-index: 999999;
       color: @seaBlue;
       text-align: center;
+      top: 18px;
+      left: -50px;
 
       .score {
         font-family: @paytone;
