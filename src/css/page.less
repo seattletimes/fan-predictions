@@ -55,7 +55,8 @@
   position: relative;
   text-align: center;
   margin: 0 auto 2em;
-  max-width: 940px;
+  padding: 0 8px;
+  max-width: 1200px;
 
   .share {
     display: inline-block !important;
@@ -80,31 +81,54 @@
     }
   }
   
-  h1 {
-    font-size: 3.2em;
-    font-family: @paytone;
+  .hed-main {
+    font-size: 40px;
+    line-height: 1em;
+    font-family: @block;
     text-transform: uppercase;
     color: @seaBlue;
-    margin: 1em 0 0 0;
+    padding-top: 20px;
+    margin: 1em 0 10px 0;
 
-    @media @tablet {
-      line-height: 60px;
+    @media @landscape {
+      font-size: 35px;
     }
 
-    @media (~"max-width: 400px") {
-      font-size: 2.6em;
-      line-height: 42px;
+    @media @mobile {
+      font-size: 25px;
+    }
+  }
+
+  .hed-deck {
+    font-size: 4em;
+    line-height: 1em;
+    font-family: @paytone;
+    color: @seaBlue;
+    margin: 0 0 0.2em 0;
+
+    @media @landscape {
+      font-size: 3.5em;
+    }
+
+    @media @tablet {
+      font-size: 3em;
+    }
+
+    @media @mobile {
+      font-size: 30px;
     }
   }
 
   p {
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 1.4em;
-    margin-top: 0;
-    margin: 0 10px;
+    margin: 0 auto 1em;
+    width: 100%;
+    max-width: 940px;
 
     @media @tablet {
-      padding-top: 10px;
+      margin-top: 10px;
+      font-size: 18px;
     }
   }
 
