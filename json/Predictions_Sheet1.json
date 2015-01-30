@@ -5,7 +5,7 @@
     "score": "24-16",
     "winner": "Seahawks",
     "comment": "The Seahawks’ team speed and physical play on defense will disrupt the New England offense. But this will ultimately go down as the game that cements Marshawn Lynch’s legend. He’ll be the most indifferent Super Bowl MVP in league history because of all the attention that comes with it.",
-    "mug": "brewer",
+    "mug": "brewer.jpg",
     "color": "green"
   },
   {
@@ -14,7 +14,7 @@
     "score": "31-24",
     "winner": "Seahawks",
     "comment": "The Seahawks rode their running game and defense to the Super Bowl and they will ride it to a second straight title that will raise them to a permanent standing among the great teams in NFL history.",
-    "mug": "condotta",
+    "mug": "condotta.jpg",
     "color": "green"
   },
   {
@@ -23,7 +23,7 @@
     "score": "24-23",
     "winner": "Seahawks",
     "comment": "The Patriots are a disciplined and physical team, the kind that can hang with the Seahawks. But the Seahawks’ defense has played some of its most determined football against some of the NFL’s best offenses, and it will do so one more time.",
-    "mug": "jenks",
+    "mug": "jenks.jpg",
     "color": "green"
   },
   {
@@ -32,7 +32,7 @@
     "score": "26-20, OT",
     "winner": "Seahawks",
     "comment": "No Super Bowl has ever gone into overtime, but these two teams are so evenly matched it’s set up to be the first. And I like Russell Wilson in those situations, even against a clutch performer like Tom Brady. It would help if Tarvaris Jackson nails the coin toss again.",
-    "mug": "stone",
+    "mug": "stone.jpg",
     "color": "green"
   },
   {
@@ -41,7 +41,7 @@
     "score": "24-14",
     "winner": "Patriots",
     "comment": "Patriots healthier and better than Packers squad that nearly beat Seattle. You can’t completely stop Tom Brady aerial attack and equally formidable run game, while Hawks’ slow-starting offense will have tough time keeping pace versus shutdown corners.",
-    "mug": "baker",
+    "mug": "baker.jpg",
     "color": "red"
   },
   {
@@ -50,7 +50,7 @@
     "score": "24-21",
     "winner": "Seahawks",
     "comment": "This will be a tougher game than some people think. But in the end, the Seahawks will create two turnovers, including an interception of Tom Brady in the win. Marshawn Lynch will also run for more than 130 yards and score two TDs.",
-    "mug": "divish",
+    "mug": "divish.jpg",
     "color": "green"
   },
   {
@@ -59,7 +59,16 @@
     "score": "27-21",
     "winner": "Patriots",
     "comment": "The unsung Patriots’ defense keeps the Seahawks contained until late, and another dramatic Seattle surge falls just short in Glendale, Ariz.",
-    "mug": "pentz",
+    "mug": "pentz.jpg",
+    "color": "red"
+  },
+  {
+    "title": "Times preps coordinator",
+    "name": "Solange Reyner",
+    "score": "35-23",
+    "winner": "Patriots",
+    "comment": "Look at the betting odds -- Patriots are favored.",
+    "mug": "reyner.jpg",
     "color": "red"
   },
   {
@@ -77,7 +86,7 @@
     "score": "30-24",
     "winner": "Seahawks",
     "comment": "I think all in all, the Seahawks are a younger and hungrier team, and I think they'll end up winning the game. I don't think it will be as easy as last year, but I think they'll get it done. ",
-    "mug": "largent",
+    "mug": "largent.jpg",
     "color": "green"
   },
   {
@@ -86,7 +95,7 @@
     "score": "20-17",
     "winner": "Seahawks",
     "comment": "I think it's going to be a really close game. I think I predicted a close game last year and it was pretty one-sided, but I can't imagine this game going that way.",
-    "mug": "zorn",
+    "mug": "zorn.JPG",
     "color": "green"
   },
   {
@@ -95,7 +104,79 @@
     "score": "29-14",
     "winner": "Seahawks",
     "comment": "Just because we’re awesome, and Marshawn Lynch is a badass.",
-    "mug": "mccready",
+    "mug": "mccready.JPG",
+    "color": "green"
+  },
+  {
+    "title": "Mayor of Seattle",
+    "name": "Ed Murray",
+    "score": "?-?",
+    "winner": "Seahawks",
+    "comment": "This year, very close, but we win. No number, because I just don’t know. Last year, we took Boston’s status as a larger city away when we took their police chief, and now we’re going to take the Super Bowl.”",
+    "mug": "murray.JPG",
+    "color": "green"
+  },
+  {
+    "title": "Seattle City Councilwoman ",
+    "name": "Sally Clark",
+    "score": "35-27 ",
+    "winner": "Seahawks",
+    "comment": "Tom Brady doesn't have a cold, he's playing like he does. It won't matter. Marshawn will go for 126 yards.",
+    "mug": "clark.JPG",
+    "color": "green"
+  },
+  {
+    "title": "Seattle Mariners GM",
+    "name": "Jack Zduriencik",
+    "score": "24-20",
+    "winner": "Seahawks",
+    "comment": "Why? ‘Cause we’re better.",
+    "mug": "zduriencik.JPG",
+    "color": "green"
+  },
+  {
+    "title": "Former Mariner",
+    "name": "John Olerud",
+    "score": "21-20",
+    "winner": "Seahawks",
+    "comment": "I just think it’s gonna be a tough game. It’s gonna be a battle. The Seahawks are not gonna feel like they’re just going to roll over.",
+    "mug": "olerud.jpg",
+    "color": "green"
+  },
+  {
+    "title": "Lead singer for Pearl Jam",
+    "name": "Eddie Vedder",
+    "score": "?-?",
+    "winner": "Won't say",
+    "comment": "I'm not good at that.",
+    "mug": "vedder.jpg",
+    "color": ""
+  },
+  {
+    "title": "Baseball Hall of Famer",
+    "name": "Dave Winfield",
+    "score": "?-?",
+    "winner": "Won't say",
+    "comment": "No prediction. I was amazed that the Seahawks made it. I’ve never seen anything like it. Seattle has become the permanent enemy of the Green Bay Packers. They’re both great teams, but look at what I wore today. [A green tie and blue suit.]",
+    "mug": "winfield.JPG",
+    "color": ""
+  },
+  {
+    "title": "KJR Radio host \"Gasman\"",
+    "name": "Mike Gastineau",
+    "score": "28-17",
+    "winner": "Seahawks",
+    "comment": "Their defense keeps them in games, and allows them to wear teams down.",
+    "mug": "gastineau.JPG",
+    "color": "green"
+  },
+  {
+    "title": "Musician",
+    "name": "Dave Matthews",
+    "score": "36-20",
+    "winner": "Seahawks",
+    "comment": "Go Hawks!”",
+    "mug": "matthews.jpg",
     "color": "green"
   }
 ]
