@@ -59,6 +59,8 @@
       p.r = 78;
       p.g = 174;
       p.b = 1;
+      p.winner = p.seahawks;
+      p.loser = p.patriots;
       seahawkCount += p.count;
     } else {
       p.team = "patriots";
@@ -66,6 +68,8 @@
       p.r = 200;
       p.g = 8;
       p.b = 21;
+      p.winner = p.patriots;
+      p.loser = p.seahawks;
       patriotCount += p.count;
     }
   }
@@ -129,7 +133,9 @@
 
         <div class="results">
           <div class="sidebar">
-            <p class="sidebar-title uppercase">Current fan favorite:</p>
+
+            <p class="sidebar-title uppercase">Who fans picked:</p>
+
             <div>
               <div class="sidebar-box">
                 <div class="team-box seahawks">

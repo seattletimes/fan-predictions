@@ -96,14 +96,14 @@ a {
 
 .scatter-box-outer {
   width: calc(~"100% - 350px");
-  float: left;
-  padding-right: 50px;
+  padding-left: 50px;
 
   @media @tablet {
     float: none;
     margin: auto;
     width: calc(~"100% - 150px");
     padding-top: 20px;
+    padding-left: 0;
   }
 
   @media (~"max-width: 600px") {
@@ -113,6 +113,7 @@ a {
   @media (~"max-width: 570px") {
     width: 100%;
     padding-left: 20px;
+    padding-right: 30px;
     padding-top: 30px;
   }
 }
@@ -139,6 +140,8 @@ a {
       -ms-transform: rotate(-90deg);
       top: 50%;
       left: -5px;
+      -ms-transform-origin: top left;
+      -webkit-transform-origin: top left;
       transform-origin: top left;
     }
   }
@@ -184,10 +187,17 @@ a {
       }
     }
 
-    &.user {
+    &.user.seahawks {
       .point {
-        background: @seaBlue !important;
-        opacity: 1 !important;
+        background: @seahawks !important;
+        border: 3px solid @seaBlue;
+      }
+    }
+
+    &.user.patriots {
+      .point {
+        background: @patriots !important;
+        border: 3px solid @seaBlue;
       }
     }
 
@@ -198,7 +208,6 @@ a {
       width: @size;
       height: @size;
       border-radius: 100%;
-      border: 1px solid @seaBlue;
     }
 
     .tooltip {
@@ -247,7 +256,7 @@ a {
 .sidebar {
   display: inline-block;
   width: 350px;
-  float: left;
+  float: right;
   text-align: center;
 
   @media (~"max-width: 900px") {
@@ -342,7 +351,7 @@ a {
     }
 
     .avg-diff {
-      font-size: 1.6em;
+      font-size: 1.4em;
       font-family: @paytone;
       color: @seaBlue;
       text-align: center;
