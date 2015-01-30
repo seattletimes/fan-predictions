@@ -5,13 +5,13 @@
       "path": "still-sea"
     },
     "live": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects.seattletimes.com",
+      "path": "2015/super-bowl-predictions"
     }
   },
   "title": "Super Bowl Pick 'Em: Seahawks vs. Patriots",
   "description": "Got a prediction for the big game Sunday? Post it here, and see what other fans and notables are predicting.",
-  "url": "",
-  "slug": "",
-  "tags": []
+  "url": "projects.seattletimes.com/2015/super-bowl-predictions/",
+  "slug": "super-bowl-predictions",
+  "tags": ["Seahawks", "Seattle", "sports", "NFL", "Super Bowl", "fans", "predictions"]
 }

@@ -3,7 +3,7 @@
   <% json.Predictions_Sheet1.forEach(function(prediction) { %>
     <div class="prediction">  
       <div class="card-top">
-          <% if(prediction.mug) { %>
+          <% if (prediction.mug) { %>
           <img class="mug" src="assets/<%= prediction.mug %>">
           <div class="info">
             <p class="name"><%= prediction.name %></p>
