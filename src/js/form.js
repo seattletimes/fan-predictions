@@ -33,7 +33,9 @@ form.on("click", ".submit", function() {
   var errorMsg = "";
   if (!packet) {
     errorMsg = "We need your prediction in order to add you!";
-  }  else if (Math.max(packet.patriots, packet.seahawks) > 70) {
+  } else if (isNaN(packet.patriots) || isNaN(packet.seahawks)) {
+    errorMsg = "Scores must be numbers.";
+  } else if (Math.max(packet.patriots, packet.seahawks) > 70) {
     errorMsg = "Scores over 70 points are not accepted.";
   } else if (packet.seahawks == packet.patriots) {
     errorMsg = "Scores cannot be equal.";
