@@ -12,8 +12,19 @@ module.exports = function(score) {
   } else {
     var hawks = score.split("-")[0];
     var pats = score.split("-")[1];
-    var team = hawks > pats ? "seahawks" : "patriots";
-    var title = hawks > pats ? "Seahawks" : "Patriots";
+    if (hawks > pats) {
+      var team = "seahawks";
+      var title = "Seahawks";
+      var r = 78;
+      var g = 174;
+      var b = 1;
+    } else {
+      var team = "patriots";
+      var title = "Patriots";
+      var r = 200;
+      var g = 8;
+      var b = 21;
+    }
 
     var dot = ich.dot({
       team: team,
@@ -22,6 +33,9 @@ module.exports = function(score) {
       patriots: pats,
       x: hawks / window.maxScore * 100,
       y: pats / window.maxScore * 100,
+      r: r,
+      g: g,
+      b: b,
       opacity: 1,
       count: 1,
       user: "user"
