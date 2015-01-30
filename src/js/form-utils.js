@@ -16,7 +16,7 @@ module.exports = {
       }
       var cast = this.getAttribute("data-cast");
       if (cast && cast == "number") {
-        value = value * 1;
+        value = parseInt(value, 10);
       }
       packet[key] = value;
     });
