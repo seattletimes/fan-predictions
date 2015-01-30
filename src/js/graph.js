@@ -18,12 +18,16 @@ module.exports = function(score) {
       var r = 78;
       var g = 174;
       var b = 1;
+      var winner = hawks;
+      var loser = pats;
     } else {
       var team = "patriots";
       var title = "Patriots";
       var r = 200;
       var g = 8;
       var b = 21;
+      var winner = pats;
+      var loser = hawks;
     }
 
     var dot = ich.dot({
@@ -38,6 +42,8 @@ module.exports = function(score) {
       b: b,
       opacity: 1,
       count: 1,
+      winner: winner,
+      loser: loser,
       user: "user"
     });
     $(".scatterplot").append(dot);
