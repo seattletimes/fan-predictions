@@ -5,6 +5,7 @@ var $ = require("jquery");
 
 var Share = require("share");
 new Share(".share", {
+  url: "http://projects.seattletimes.com/2015/super-bowl-predictions",
   ui: {
     flyout: "bottom center"
   }
